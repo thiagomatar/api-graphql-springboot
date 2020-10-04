@@ -1,0 +1,35 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.4.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'com.thiagomatar'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '15'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:7.0.1'
+	implementation 'com.graphql-java-kickstart:graphiql-spring-boot-starter:7.0.1'
+	implementation 'com.graphql-java-kickstart:voyager-spring-boot-starter:7.0.1'
+	testCompile 'com.graphql-java-kickstart:graphql-spring-boot-starter-test:7.0.1'
+
+	runtimeOnly 'mysql:mysql-connector-java'
+
+
+
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+test {
+	useJUnitPlatform()
+}

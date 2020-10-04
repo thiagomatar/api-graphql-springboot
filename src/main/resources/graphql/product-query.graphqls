@@ -1,0 +1,13 @@
+type Customer {
+    id: Int,
+    name: String,
+    document: String,
+    email: String,
+    address: String,
+    phone: String
+}
+
+extend type Query {
+    customer(id: Int!): Customer
+    customers: [Customer]
+}
