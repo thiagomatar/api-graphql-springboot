@@ -1,0 +1,11 @@
+#type Product{
+#    id: ID,
+#    description: String,
+#    brand: String,
+#    price: Float
+#}
+#
+#extend type Query {
+#    product(id: ID!): Product
+#    products:[Product]
+#}

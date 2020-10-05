@@ -1,0 +1,11 @@
+#type Order{
+#    id: ID,
+#    customer: String,
+#    products: [Product],
+#    requestDate: String
+#}
+#
+#extend type Query {
+#    order(id:ID): Order
+#    orders: [Order]
+#}

@@ -9,6 +9,6 @@ public interface CustomerQuery extends GraphQLQueryResolver {
 
     List<Customer> customers();
 
-    Customer customer(String id);
+    Customer customer(Long id);
 
 }

@@ -1,0 +1,26 @@
+type Customer {
+    id: ID,
+    name: String,
+    document: String,
+    email: String,
+    address: String,
+    phone: String
+}
+
+input CustomerInput{
+    name: String,
+    document: String,
+    email: String,
+    address: String,
+    phone: String
+}
+
+extend type Query {
+    customer(id: ID!): Customer
+    customers: [Customer]
+}
+
+extend type Mutation {
+    saveCustomer(customer: CustomerInput): Customer
+    updateCustomer(id: ID, customer: CustomerInput): Customer
+}
