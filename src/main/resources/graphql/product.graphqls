@@ -1,11 +1,22 @@
-#type Product{
-#    id: ID,
-#    description: String,
-#    brand: String,
-#    price: Float
-#}
-#
-#extend type Query {
-#    product(id: ID!): Product
-#    products:[Product]
-#}
+type Product {
+    id: ID,
+    description: String,
+    brand: String,
+    price: Float
+}
+
+input ProductInput {
+    description: String,
+    brand: String,
+    price: Float
+}
+
+extend type Query {
+    product(id: ID!): Product
+    products:[Product]
+}
+
+extend type Mutation {
+    saveProduct(product: ProductInput): Product
+    updateProduct(product: ProductInput): Product
+}

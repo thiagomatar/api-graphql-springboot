@@ -1,17 +1,19 @@
 package com.thiagomatar.graphql.resolver;
 
-import com.thiagomatar.graphql.model.Product;
+import com.thiagomatar.graphql.model.Order;
+import graphql.kickstart.tools.GraphQLMutationResolver;
+import graphql.kickstart.tools.GraphQLQueryResolver;
 
 import java.util.List;
 
-public interface ProductGraphQL {
+public interface OrderGraphQL extends GraphQLQueryResolver, GraphQLMutationResolver {
 
-    List<Product> products();
+    List<Order> orders();
 
-    Product product(Long id);
+    Order order(Long id);
 
-    Product saveProduct(Product product);
+    Order saveOrder(Order order);
 
-    Product updateProduct(Long id, Product product);
+    Order updateOrder(Long id, Order order);
 
 }

@@ -1,11 +1,22 @@
-#type Order{
-#    id: ID,
-#    customer: String,
-#    products: [Product],
-#    requestDate: String
-#}
-#
-#extend type Query {
-#    order(id:ID): Order
-#    orders: [Order]
-#}
+type Order{
+    id: ID,
+    customer: String,
+    products: [Product],
+    requestDate: String
+}
+
+input OrderInput{
+    customer: String,
+    products: [ProductInput],
+    requestDate: String
+}
+
+extend type Query {
+    order(id:ID): Order
+    orders: [Order]
+}
+
+extend type Mutation {
+    saveOrder(order:OrderInput): Order
+    updateOrderStatus(id: ID, status: String): Order
+}

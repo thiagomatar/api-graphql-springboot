@@ -1,6 +1,7 @@
 package com.thiagomatar.graphql.model;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -9,7 +10,7 @@ import java.util.Set;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String description;
@@ -18,6 +19,8 @@ public class Product {
 
     @ManyToMany(mappedBy = "products")
     private Set<Order> order = new HashSet<>();
+
+    private BigDecimal price;
 
     public Long getId() {
         return id;
@@ -49,5 +52,13 @@ public class Product {
 
     public void setOrder(Set<Order> order) {
         this.order = order;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 }
