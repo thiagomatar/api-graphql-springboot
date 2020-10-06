@@ -1,6 +1,7 @@
 package com.thiagomatar.graphql.resolver;
 
 import com.thiagomatar.graphql.model.Order;
+import com.thiagomatar.graphql.model.OrderStatus;
 import graphql.kickstart.tools.GraphQLMutationResolver;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 
@@ -14,6 +15,6 @@ public interface OrderGraphQL extends GraphQLQueryResolver, GraphQLMutationResol
 
     Order saveOrder(Order order);
 
-    Order updateOrder(Long id, Order order);
+    Order updateOrderStatus(Long id, OrderStatus order);
 
 }

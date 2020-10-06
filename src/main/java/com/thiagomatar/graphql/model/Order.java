@@ -1,7 +1,12 @@
 package com.thiagomatar.graphql.model;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -39,6 +44,9 @@ public class Order {
 
     private LocalDate requestDate;
 
+    @Enumerated(EnumType.STRING)
+    private OrderStatus status;
+
     public Long getId() {
         return id;
     }
@@ -69,5 +77,33 @@ public class Order {
 
     public void setRequestDate(LocalDate requestDate) {
         this.requestDate = requestDate;
+    }
+
+    public OrderStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(OrderStatus status) {
+        this.status = status;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Order order = (Order) o;
+
+        return new EqualsBuilder()
+                .append(id, order.id)
+                .isEquals();
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+                .append(id)
+                .toHashCode();
     }
 }

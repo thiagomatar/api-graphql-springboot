@@ -1,15 +1,24 @@
+enum OrderStatus{
+    PENDING, APPROVED, DENIED, DELIVERED
+}
+
 type Order{
     id: ID,
     customer: String,
     products: [Product],
-    requestDate: String
+    requestDate: String,
+    status: OrderStatus
 }
+
 
 input OrderInput{
     customer: String,
     products: [ProductInput],
     requestDate: String
+    status: OrderStatus
 }
+
+
 
 extend type Query {
     order(id:ID): Order
@@ -17,6 +26,6 @@ extend type Query {
 }
 
 extend type Mutation {
-    saveOrder(order:OrderInput): Order
-    updateOrderStatus(id: ID, status: String): Order
+    saveOrder(order:OrderInput!): Order!
+    updateOrderStatus(id: ID!, status: OrderStatus!): Order!
 }

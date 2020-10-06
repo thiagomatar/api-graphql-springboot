@@ -16,11 +16,11 @@ input CustomerInput{
 }
 
 extend type Query {
-    customer(id: ID!): Customer
-    customers: [Customer]
+    customer(id: ID!): Customer!
+    customers: [Customer]!
 }
 
 extend type Mutation {
-    saveCustomer(customer: CustomerInput): Customer
-    updateCustomer(id: ID, customer: CustomerInput): Customer
+    saveCustomer(customer: CustomerInput!): Customer!
+    updateCustomer(id: ID!, customer: CustomerInput!): Customer!
 }

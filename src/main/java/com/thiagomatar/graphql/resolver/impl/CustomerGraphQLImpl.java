@@ -6,6 +6,7 @@ import com.thiagomatar.graphql.resolver.CustomerGraphQL;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class CustomerGraphQLImpl implements CustomerGraphQL {
@@ -28,15 +29,17 @@ public class CustomerGraphQLImpl implements CustomerGraphQL {
 
     @Override
     public Customer saveCustomer(Customer customer) {
+        Optional<Customer> customerInDB = this.repository.findById(customer.getId());
+        if(customerInDB.isPresent() && !customer.equals(customerInDB)){
+            throw new RuntimeException("Cliente ja existe");
+        }
         return this.repository.save(customer);
     }
 
     @Override
     public Customer updateCustomer(Long id, Customer customer) {
-        if (this.repository.findById(id).isPresent()) {
-            return this.repository.save(customer);
-        } else {
-            throw new RuntimeException();
-        }
+        this.repository.findById(id).orElseThrow(RuntimeException::new);
+        customer.setId(id);
+        return this.repository.save(customer);
     }
 }

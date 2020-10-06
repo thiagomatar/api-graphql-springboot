@@ -3,9 +3,12 @@ package com.thiagomatar.graphql.resolver.impl;
 import com.thiagomatar.graphql.model.Product;
 import com.thiagomatar.graphql.repository.ProductRepository;
 import com.thiagomatar.graphql.resolver.ProductGraphQL;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
+@Component
 public class ProductGraphQLImpl implements ProductGraphQL {
 
     private final ProductRepository repository;
@@ -16,21 +19,27 @@ public class ProductGraphQLImpl implements ProductGraphQL {
 
     @Override
     public List<Product> products() {
-        return null;
+        return this.repository.findAll();
     }
 
     @Override
     public Product product(Long id) {
-        return null;
+        return this.repository.findById(id).orElseThrow(RuntimeException::new);
     }
 
     @Override
     public Product saveProduct(Product product) {
-        return null;
+        Optional<Product> productInDB = this.repository.findById(product.getId());
+        if(productInDB.isPresent() && !product.equals(productInDB.get())){
+            throw new RuntimeException();
+        }
+        return this.repository.save(product);
     }
 
     @Override
     public Product updateProduct(Long id, Product product) {
-        return null;
+        this.repository.findById(id).orElseThrow(RuntimeException::new);
+        product.setId(id);
+        return this.repository.save(product);
     }
 }
