@@ -4,16 +4,24 @@ enum OrderStatus{
 
 type Order{
     id: ID,
-    customer: String,
+    customer: Customer,
     products: [Product],
     requestDate: String,
     status: OrderStatus
 }
 
+input OrderCustomer{
+    id: ID
+}
+
+input OrderProduct{
+    id: ID
+}
+
 
 input OrderInput{
-    customer: String,
-    products: [ProductInput],
+    customer: OrderCustomer,
+    products: [OrderProduct],
     requestDate: String
     status: OrderStatus
 }

@@ -1,12 +1,11 @@
-package com.thiagomatar.graphql.resolver.impl;
+package com.thiagomatar.graphql.graphql.impl;
 
 import com.thiagomatar.graphql.model.Customer;
 import com.thiagomatar.graphql.repository.CustomerRepository;
-import com.thiagomatar.graphql.resolver.CustomerGraphQL;
+import com.thiagomatar.graphql.graphql.CustomerGraphQL;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Optional;
 
 @Component
 public class CustomerGraphQLImpl implements CustomerGraphQL {
@@ -29,10 +28,6 @@ public class CustomerGraphQLImpl implements CustomerGraphQL {
 
     @Override
     public Customer saveCustomer(Customer customer) {
-        Optional<Customer> customerInDB = this.repository.findById(customer.getId());
-        if(customerInDB.isPresent() && !customer.equals(customerInDB)){
-            throw new RuntimeException("Cliente ja existe");
-        }
         return this.repository.save(customer);
     }
 

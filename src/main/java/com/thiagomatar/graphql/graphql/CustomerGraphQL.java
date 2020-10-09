@@ -1,4 +1,4 @@
-package com.thiagomatar.graphql.resolver;
+package com.thiagomatar.graphql.graphql;
 
 import com.thiagomatar.graphql.model.Customer;
 import graphql.kickstart.tools.GraphQLMutationResolver;

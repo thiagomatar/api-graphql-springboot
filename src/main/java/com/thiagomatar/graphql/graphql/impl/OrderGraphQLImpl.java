@@ -1,11 +1,12 @@
-package com.thiagomatar.graphql.resolver.impl;
+package com.thiagomatar.graphql.graphql.impl;
 
 import com.thiagomatar.graphql.model.Order;
 import com.thiagomatar.graphql.model.OrderStatus;
 import com.thiagomatar.graphql.repository.OrderRepository;
-import com.thiagomatar.graphql.resolver.OrderGraphQL;
+import com.thiagomatar.graphql.graphql.OrderGraphQL;
 import org.springframework.stereotype.Component;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Component
@@ -28,6 +29,7 @@ public class OrderGraphQLImpl implements OrderGraphQL {
     }
 
     @Override
+    @Transactional
     public Order saveOrder(Order order) {
         return this.repository.save(order);
     }

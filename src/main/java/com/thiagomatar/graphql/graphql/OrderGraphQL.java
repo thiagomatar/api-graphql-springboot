@@ -1,4 +1,4 @@
-package com.thiagomatar.graphql.resolver;
+package com.thiagomatar.graphql.graphql;
 
 import com.thiagomatar.graphql.model.Order;
 import com.thiagomatar.graphql.model.OrderStatus;
