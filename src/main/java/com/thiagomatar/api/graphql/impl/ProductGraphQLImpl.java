@@ -1,8 +1,8 @@
-package com.thiagomatar.graphql.graphql.impl;
+package com.thiagomatar.api.graphql.impl;
 
-import com.thiagomatar.graphql.graphql.ProductGraphQL;
-import com.thiagomatar.graphql.model.Product;
-import com.thiagomatar.graphql.service.ProductService;
+import com.thiagomatar.api.graphql.ProductGraphQL;
+import com.thiagomatar.api.model.Product;
+import com.thiagomatar.api.service.ProductService;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

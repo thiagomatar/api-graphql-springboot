@@ -1,7 +1,7 @@
-package com.thiagomatar.graphql.graphql;
+package com.thiagomatar.api.graphql;
 
-import com.thiagomatar.graphql.model.Order;
-import com.thiagomatar.graphql.model.OrderStatus;
+import com.thiagomatar.api.model.Order;
+import com.thiagomatar.api.model.OrderStatus;
 import graphql.kickstart.tools.GraphQLMutationResolver;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 

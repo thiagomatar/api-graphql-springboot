@@ -1,4 +1,4 @@
-package com.thiagomatar.graphql.model;
+package com.thiagomatar.api.model;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;

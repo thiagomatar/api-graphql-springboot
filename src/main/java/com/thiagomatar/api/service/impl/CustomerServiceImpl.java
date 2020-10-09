@@ -1,8 +1,8 @@
-package com.thiagomatar.graphql.service.impl;
+package com.thiagomatar.api.service.impl;
 
-import com.thiagomatar.graphql.model.Customer;
-import com.thiagomatar.graphql.repository.CustomerRepository;
-import com.thiagomatar.graphql.service.CustomerService;
+import com.thiagomatar.api.model.Customer;
+import com.thiagomatar.api.repository.CustomerRepository;
+import com.thiagomatar.api.service.CustomerService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

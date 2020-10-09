@@ -1,7 +1,7 @@
-package com.thiagomatar.graphql.repository;
+package com.thiagomatar.api.repository;
 
 
-import com.thiagomatar.graphql.model.Customer;
+import com.thiagomatar.api.model.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

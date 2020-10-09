@@ -1,7 +1,7 @@
-package com.thiagomatar.graphql.service;
+package com.thiagomatar.api.service;
 
-import com.thiagomatar.graphql.model.Order;
-import com.thiagomatar.graphql.model.OrderStatus;
+import com.thiagomatar.api.model.Order;
+import com.thiagomatar.api.model.OrderStatus;
 
 import java.util.List;
 

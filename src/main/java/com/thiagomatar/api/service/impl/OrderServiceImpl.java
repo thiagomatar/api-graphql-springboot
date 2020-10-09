@@ -1,9 +1,9 @@
-package com.thiagomatar.graphql.service.impl;
+package com.thiagomatar.api.service.impl;
 
-import com.thiagomatar.graphql.model.Order;
-import com.thiagomatar.graphql.model.OrderStatus;
-import com.thiagomatar.graphql.repository.OrderRepository;
-import com.thiagomatar.graphql.service.OrderService;
+import com.thiagomatar.api.model.Order;
+import com.thiagomatar.api.model.OrderStatus;
+import com.thiagomatar.api.repository.OrderRepository;
+import com.thiagomatar.api.service.OrderService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -1,15 +1,14 @@
-package com.thiagomatar.graphql.resolver;
+package com.thiagomatar.api.resolver;
 
-import com.thiagomatar.graphql.model.Customer;
-import com.thiagomatar.graphql.model.Order;
-import com.thiagomatar.graphql.model.Product;
-import com.thiagomatar.graphql.repository.CustomerRepository;
-import com.thiagomatar.graphql.repository.ProductRepository;
+import com.thiagomatar.api.model.Customer;
+import com.thiagomatar.api.model.Order;
+import com.thiagomatar.api.model.Product;
+import com.thiagomatar.api.repository.CustomerRepository;
+import com.thiagomatar.api.repository.ProductRepository;
 import graphql.kickstart.tools.GraphQLResolver;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Component
 public class OrderResolver implements GraphQLResolver<Order> {

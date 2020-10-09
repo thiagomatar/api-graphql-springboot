@@ -1,6 +1,6 @@
-package com.thiagomatar.graphql.service;
+package com.thiagomatar.api.service;
 
-import com.thiagomatar.graphql.model.Customer;
+import com.thiagomatar.api.model.Customer;
 
 import java.util.List;
 

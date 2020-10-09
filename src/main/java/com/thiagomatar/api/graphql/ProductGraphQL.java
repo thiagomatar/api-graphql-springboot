@@ -1,6 +1,6 @@
-package com.thiagomatar.graphql.graphql;
+package com.thiagomatar.api.graphql;
 
-import com.thiagomatar.graphql.model.Product;
+import com.thiagomatar.api.model.Product;
 import graphql.kickstart.tools.GraphQLMutationResolver;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 
