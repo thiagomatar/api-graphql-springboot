@@ -1,8 +1,8 @@
 package com.thiagomatar.graphql.graphql.impl;
 
-import com.thiagomatar.graphql.model.Product;
-import com.thiagomatar.graphql.repository.ProductRepository;
 import com.thiagomatar.graphql.graphql.ProductGraphQL;
+import com.thiagomatar.graphql.model.Product;
+import com.thiagomatar.graphql.service.ProductService;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -10,31 +10,31 @@ import java.util.List;
 @Component
 public class ProductGraphQLImpl implements ProductGraphQL {
 
-    private final ProductRepository repository;
+    private final ProductService service;
 
-    public ProductGraphQLImpl(ProductRepository repository) {
-        this.repository = repository;
+    public ProductGraphQLImpl(ProductService service) {
+        this.service = service;
     }
 
     @Override
     public List<Product> products() {
-        return this.repository.findAll();
+        return this.service.findAll();
     }
 
     @Override
     public Product product(Long id) {
-        return this.repository.findById(id).orElseThrow(RuntimeException::new);
+        return this.service.findById(id);
     }
 
     @Override
     public Product saveProduct(Product product) {
-        return this.repository.save(product);
+        return this.service.save(product);
     }
 
     @Override
     public Product updateProduct(Long id, Product product) {
-        this.repository.findById(id).orElseThrow(RuntimeException::new);
+        this.service.findById(id);
         product.setId(id);
-        return this.repository.save(product);
+        return this.service.save(product);
     }
 }
