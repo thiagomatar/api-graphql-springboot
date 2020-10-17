@@ -4,6 +4,7 @@ import com.thiagomatar.api.model.Order;
 import com.thiagomatar.api.model.OrderStatus;
 import com.thiagomatar.api.repository.OrderRepository;
 import com.thiagomatar.api.service.OrderService;
+import com.thiagomatar.api.service.exception.OrderNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Order findById(Long id) {
-        return this.repository.findById(id).orElseThrow(RuntimeException::new);
+        return this.repository.findById(id).orElseThrow(OrderNotFoundException::new);
     }
 
     @Override
