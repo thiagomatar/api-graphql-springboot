@@ -3,6 +3,7 @@ package com.thiagomatar.api.service.impl;
 import com.thiagomatar.api.model.Customer;
 import com.thiagomatar.api.repository.CustomerRepository;
 import com.thiagomatar.api.service.CustomerService;
+import com.thiagomatar.api.service.exception.CustomerNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer findById(Long id) {
-        return this.repository.findById(id).orElseThrow(RuntimeException::new);
+        return this.repository.findById(id).orElseThrow(CustomerNotFoundException::new);
     }
 
     @Override
