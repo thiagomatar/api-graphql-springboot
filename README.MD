@@ -5,7 +5,7 @@ O que é necessário antes de inicializar a aplicação?
 
 Fluxo da aplicação:
 - Ao inicializar a aplicação a url http://localhost:8080/graphiql estará disponivel. 
-- É possivel realizar consultas e  cadastrar Clientes, Produtos e Pedidos, para mais detalhes, olhe a documentação que o GraphiQL
+- É possivel realizar consultas e  cadastrar Clientes, Produtos e Pedidos, para mais detalhes, olhe a documentação que o GraphiQL fornece
 
 Exemplos:
 Para cadastrar um Cliente
