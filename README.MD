@@ -79,4 +79,5 @@ query{
 ```
 
 Para saber mais como criar consultas avançadas acesse: [https://graphql.org/learn/queries/](https://graphql.org/learn/queries/)
+
 Para ler o artigo que escrevi sobre este projeto acesse: https://medium.com/@thiagomatar/criando-uma-api-graphql-com-spring-boot
