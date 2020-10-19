@@ -14,7 +14,7 @@ import java.util.Locale;
 @Component
 public class GraphqlExceptionHandler {
 
-    private static final String NO_MESSAGE_AVAILABLE = "No message" + " available";
+    private static final String NO_MESSAGE_AVAILABLE = "No message available";
     private static final Logger LOGGER = LoggerFactory.getLogger(GraphqlExceptionHandler.class);
 
 
